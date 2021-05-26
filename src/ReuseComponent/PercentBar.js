@@ -4,7 +4,7 @@ const PercentBar = (props) => {
 
     //variables from props
     const percentVal = props.percentVal;
-    const tubeLength = props.typeOfCard == 'long' ? 1000 : 500;   
+    const tubeLength = props.typeOfCard == 'long' ? 1000 : 160;   
 
     const tubeHeight = 30;
     const marginVal = 5;

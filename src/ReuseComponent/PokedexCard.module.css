@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap');
+
+.pictureArea {
+    width: 220px;
+    /* background-color: pink; */
+    position: relative;
+}
+
+.picture {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.stylePokemonName {
+    /* background-color: salmon; */
+    font-family: 'Gaegu', cursive;
+}
+
+.resizePokemonImage {
+    height: 270px;
+    width: auto;
+}
+
+.styleCuteImage {
+    height: 44px;
+    width: auto;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+.setFontWeightBeforeTube {
+    font-weight: 800;
+}

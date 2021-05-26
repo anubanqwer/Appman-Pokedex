@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
 import PercentBar from './ReuseComponent/PercentBar';
+import Header from './Header';
+import Footer from './Footer';
+import PokedexCard from './ReuseComponent/PokedexCard';
 
 const COLORS = {
   Psychic: "#f8a5c2",
@@ -20,7 +23,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PercentBar percentVal={50} typeOfCard={'long'}/>
+        <Header />
+        <PokedexCard typeOfCard='short'
+                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                     pokemonName='Cutto'
+                     hpPercent={90}
+                     strPercent={20}
+                     weakPercent={50}
+                     numberOfHappiness={5}/>
+        <Footer />
       </div>
     )
   }
