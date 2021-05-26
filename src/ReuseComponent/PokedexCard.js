@@ -6,7 +6,7 @@ import cute from '../cute.png';
 const PokedexCard = (props) => {
 
     //variables from props
-    const typeOfCard = 'short';
+    const typeOfCard = props.typeOfCard;
     const imageUrl = props.imageUrl;
     const pokemonName = props.pokemonName;
     const hpPercent = props.hpPercent;
@@ -15,8 +15,8 @@ const PokedexCard = (props) => {
     const numberOfHappiness = props.numberOfHappiness;    
 
     //Other variables
-    const cardHeight = 300;
-    const cardWidth = 490;
+    const cardHeight = 287;
+    const cardWidth = 485;
 
     let happinessList = [];
     for(var i=0; i < props.numberOfHappiness; i++){

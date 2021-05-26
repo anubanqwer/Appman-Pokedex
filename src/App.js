@@ -24,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <div className="cardArea">
         <PokedexCard typeOfCard='short'
                      imageUrl='https://images.pokemontcg.io/ex14/85.png'
                      pokemonName='Cutto'
@@ -31,6 +32,21 @@ class App extends Component {
                      strPercent={20}
                      weakPercent={50}
                      numberOfHappiness={5}/>
+                     {/* <PokedexCard typeOfCard='short'
+                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                     pokemonName='Cutto'
+                     hpPercent={90}
+                     strPercent={20}
+                     weakPercent={50}
+                     numberOfHappiness={5}/>
+                     <PokedexCard typeOfCard='short'
+                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                     pokemonName='Cutto'
+                     hpPercent={90}
+                     strPercent={20}
+                     weakPercent={50}
+                     numberOfHappiness={5}/> */}
+        </div>
         <Footer />
       </div>
     )
