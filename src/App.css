@@ -32,3 +32,26 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+.dotAtFooter {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  /* background-color: #ec5656; */
+  background-color: blue;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.buttonAtFooter {
+  /* color: #ffffff; */
+  color: yellow;
+  font-size: 440%;
+  cursor: pointer;
+  
+  position: relative;
+  bottom: 77px;
+  left: 26px;
+}

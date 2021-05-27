@@ -20,6 +20,11 @@ const COLORS = {
 }
 
 class App extends Component {
+
+  handleModal = () => {
+    console.log('Hello World');
+  }
+
   render() {
     return (
       <div className="App">
@@ -47,7 +52,12 @@ class App extends Component {
                      weakPercent={50}
                      numberOfHappiness={5}/> */}
         </div>
+
         <Footer />
+        <span class="dotAtFooter">
+          <p className="buttonAtFooter" onClick={this.handleModal} >+</p>
+        </span>        
+
       </div>
     )
   }
