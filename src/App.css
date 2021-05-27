@@ -41,21 +41,24 @@
   height: 90px;
   width: 90px;
   border-radius: 50%;
-  /* background-color: #ec5656; */
-  background-color: blue;
+  background-color: #ec5656;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonAtFooter {
-  /* color: #ffffff; */
-  color: yellow;
+  color: #ffffff;
+  /* color: yellow; */
   font-size: 440%;
   cursor: pointer;
   
-  position: relative;
+  /* position: relative;
   bottom: 77px;
-  left: 26px;
+  left: 26px; */
 }
