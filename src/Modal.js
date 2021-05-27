@@ -35,7 +35,7 @@ const Modal = ({ open, onClose }) => {
                 <img src={search} alt='search' className={Styles.styleSearchImage} />
                 <div className={Styles.cardAreaInModal}>
                     CardAreaInModal
-                    <PokedexCard typeOfCard='short'
+                    <PokedexCard typeOfCard='long'
                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
                     pokemonName='Cutto'
                     hpPercent={90}

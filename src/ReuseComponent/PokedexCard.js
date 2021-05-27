@@ -16,7 +16,7 @@ const PokedexCard = (props) => {
 
     //Other variables
     const cardHeight = 287;
-    const cardWidth = 485;
+    const cardWidth = props.typeOfCard == 'long' ? 920: 485;
 
     let happinessList = [];
     for(var i=0; i < props.numberOfHappiness; i++){
