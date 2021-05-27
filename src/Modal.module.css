@@ -1,0 +1,16 @@
+.overlay {
+    position: fixed;
+    z-index: 1000;
+    background-color: #000000a3;
+    width: 1024px;
+    height: 768px;
+}
+
+.styleModal {
+    /* position: fixed; */
+    z-index: 1000;
+    background-color: #ffffff;
+    width: 964px;
+    height: 708px;
+    margin: 30px;
+}

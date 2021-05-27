@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import PercentBar from './ReuseComponent/PercentBar';
 import Header from './Header';
 import Footer from './Footer';
 import PokedexCard from './ReuseComponent/PokedexCard';
+import Modal from './Modal'
 
 const COLORS = {
   Psychic: "#f8a5c2",
@@ -19,48 +20,47 @@ const COLORS = {
   Fire: "#eb4d4b"
 }
 
-class App extends Component {
+const App = () => {
 
-  handleModal = () => {
-    console.log('Hello World');
-  }
+  const [isOpen, setIsOpen] = useState(false);
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <div className="cardArea">
-        <PokedexCard typeOfCard='short'
-                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                     pokemonName='Cutto'
-                     hpPercent={90}
-                     strPercent={20}
-                     weakPercent={50}
-                     numberOfHappiness={5}/>
-                     {/* <PokedexCard typeOfCard='short'
-                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                     pokemonName='Cutto'
-                     hpPercent={90}
-                     strPercent={20}
-                     weakPercent={50}
-                     numberOfHappiness={5}/>
-                     <PokedexCard typeOfCard='short'
-                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                     pokemonName='Cutto'
-                     hpPercent={90}
-                     strPercent={20}
-                     weakPercent={50}
-                     numberOfHappiness={5}/> */}
-        </div>
+  return (
+    <div className="App">
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
 
-        <Footer />
-        <span class="dotAtFooter">
-          <p className="buttonAtFooter" onClick={this.handleModal} >+</p>
-        </span>        
-
+      <Header />
+      <div className="cardArea">
+      <PokedexCard typeOfCard='short'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/>
+                    <PokedexCard typeOfCard='short'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/>
+                    <PokedexCard typeOfCard='short'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/>
       </div>
-    )
-  }
+
+      <Footer />
+      <span class="dotAtFooter">
+        <p className="buttonAtFooter" onClick={() => setIsOpen(true)} >+</p>
+      </span>        
+
+    </div>
+  );
+  
 }
 
 export default App
