@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from './PokedexCard.module.css';
 import PercentBar from './PercentBar';
 import cute from '../cute.png';
@@ -25,6 +25,8 @@ const PokedexCard = (props) => {
         happinessList.push(<img src={cute} alt='cute' className={Styles.styleCuteImage} />)
     }
 
+    const [isHoverCard, setIsHoverCard] = useState(false);
+
     return (
         <div style={{
             height: `${cardHeight}` + 'px',
@@ -33,7 +35,10 @@ const PokedexCard = (props) => {
             'box-shadow': '3px 3px #d5d6dc',
             'display': 'flex',
             'margin': '10px 0px'
-        }}>
+        }}
+            onMouseEnter={()=> setIsHoverCard(true)}
+            onMouseLeave={()=> setIsHoverCard(false)}
+        >
             <div className={Styles.pictureArea}>
                 <div className={Styles.picture}>
                     <img src={imageUrl} alt="Pokemon Picture" className={Styles.resizePokemonImage} />
@@ -71,7 +76,18 @@ const PokedexCard = (props) => {
                 </table>            
                 {happinessList}
 
-                <div className={Styles.buttonInCard}>{buttonName}</div>
+                <div style={{
+                    /* background-color: chartreuse; */
+                    color: '#dc7777',
+                    'font-size': '25px',
+                    /* width: 50px; */
+                    position: 'absolute',
+                    top: '0px',
+                    right: '0px',
+                    'margin-top': '10px',
+                    'margin-right': '10px',
+                    display: isHoverCard ? "": "none"
+                }}>{buttonName}</div>
             </div>
         </div>
     );
