@@ -34,14 +34,41 @@ const Modal = ({ open, onClose }) => {
                 <input type='text' placeholder='Find pokemon' className={Styles.searchBar}/>
                 <img src={search} alt='search' className={Styles.styleSearchImage} />
                 <div className={Styles.cardAreaInModal}>
-                    CardAreaInModal
                     <PokedexCard typeOfCard='long'
                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
                     pokemonName='Cutto'
                     hpPercent={90}
                     strPercent={20}
                     weakPercent={50}
-                    numberOfHappiness={5}/>                    
+                    numberOfHappiness={5}/>
+                    <PokedexCard typeOfCard='long'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/> 
+                    <PokedexCard typeOfCard='long'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/> 
+                    <PokedexCard typeOfCard='long'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/> 
+                    <PokedexCard typeOfCard='long'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/>                     
                 </div>
             </div>
         </div>

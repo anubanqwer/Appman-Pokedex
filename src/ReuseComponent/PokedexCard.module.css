@@ -34,3 +34,15 @@
 .setFontWeightBeforeTube {
     font-weight: 800;
 }
+
+.buttonInCard {
+    /* background-color: chartreuse; */
+    color: #dc7777;
+    font-size: 25px;
+    /* width: 50px; */
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+}

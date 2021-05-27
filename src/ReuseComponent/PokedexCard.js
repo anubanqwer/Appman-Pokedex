@@ -16,7 +16,9 @@ const PokedexCard = (props) => {
 
     //Other variables
     const cardHeight = 287;
-    const cardWidth = props.typeOfCard == 'long' ? 920: 485;
+    const cardWidth = props.typeOfCard === 'long' ? 920: 485;
+    const informationAreaWidth = props.typeOfCard === 'long' ? 700: 265;
+    const buttonName = props.typeOfCard === 'long' ? 'Add': 'X';
 
     let happinessList = [];
     for(var i=0; i < props.numberOfHappiness; i++){
@@ -28,7 +30,9 @@ const PokedexCard = (props) => {
             height: `${cardHeight}` + 'px',
             width: `${cardWidth}` + 'px',
             'background-color': '#f3f4f7',
-            'display': 'flex'
+            'box-shadow': '3px 3px #d5d6dc',
+            'display': 'flex',
+            'margin': '10px 0px'
         }}>
             <div className={Styles.pictureArea}>
                 <div className={Styles.picture}>
@@ -37,7 +41,9 @@ const PokedexCard = (props) => {
             </div>
             <div style={{
                 // 'backgroundColor': 'yellow',
-                'flex-grow': '1'
+                // 'flex-grow': '1',
+                width: `${informationAreaWidth}` + 'px',
+                'position': 'relative'
             }}>
                 <h1 className={Styles.stylePokemonName}>{pokemonName}</h1>
                 <table style={{
@@ -64,6 +70,8 @@ const PokedexCard = (props) => {
                     </tr>
                 </table>            
                 {happinessList}
+
+                <div className={Styles.buttonInCard}>{buttonName}</div>
             </div>
         </div>
     );

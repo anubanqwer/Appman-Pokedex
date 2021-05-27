@@ -42,7 +42,7 @@
 }
 
 .cardAreaInModal {
-    background-color: khaki;
+    /* background-color: khaki; */
     width: 100%;
     position: absolute;
     left: 50%;
@@ -50,4 +50,9 @@
     margin-top: 73px;
     height: 635px;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around;   */
+    align-items: center;
 }
