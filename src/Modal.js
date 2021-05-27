@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Styles from './Modal.module.css';
+import search from './search.png';
+import PokedexCard from './ReuseComponent/PokedexCard';
 
 const Modal = ({ open, onClose }) => { 
 
@@ -29,7 +31,18 @@ const Modal = ({ open, onClose }) => {
     return (
         <div className={Styles.overlay}>
             <div ref={modalRef} className={Styles.styleModal}>
-                Modal
+                <input type='text' placeholder='Find pokemon' className={Styles.searchBar}/>
+                <img src={search} alt='search' className={Styles.styleSearchImage} />
+                <div className={Styles.cardAreaInModal}>
+                    CardAreaInModal
+                    <PokedexCard typeOfCard='short'
+                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                    pokemonName='Cutto'
+                    hpPercent={90}
+                    strPercent={20}
+                    weakPercent={50}
+                    numberOfHappiness={5}/>                    
+                </div>
             </div>
         </div>
     );

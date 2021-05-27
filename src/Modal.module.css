@@ -8,9 +8,46 @@
 
 .styleModal {
     /* position: fixed; */
+    position: relative;
     z-index: 1000;
     background-color: #ffffff;
     width: 964px;
     height: 708px;
     margin: 30px;
+}
+
+.searchBar {
+    /* background-color: turquoise; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 7px;
+    width: 930px;
+    height: 40px;
+    border: solid 2px #e6e6e6;
+    font-size: 25px;
+}
+
+.searchBar::-webkit-input-placeholder {
+    font-size: 25px;
+}
+
+.styleSearchImage {
+    position: absolute;
+    height: 40px;
+    width: auto;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 16px;
+}
+
+.cardAreaInModal {
+    background-color: khaki;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 73px;
+    height: 635px;
+    overflow-y: auto;
 }
