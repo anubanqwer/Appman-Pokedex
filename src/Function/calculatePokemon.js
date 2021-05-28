@@ -7,14 +7,15 @@ const extractNumber = (res) => {
         newRes =  res.toString();
     }
 
-    let ans = newRes.replace(/\D/g, "")    
-    // console.log(typeof(ans), ans)
-    return ans
+    var regex = /\d/g
+    var ans = res.match(regex)
+
+    return ans === null ? '' : ans.join('')
 }
 
 const filter = (res) => {
 
-    if(extractNumber(res) === ''){
+    if(res === ''){
         //EXAMPLE res = 'NONE' or ''
         return '0';
     }
@@ -52,8 +53,13 @@ const toINT = (res) => {
 }
 
 const calculatePokemon = (obj) => {
-    // let calculatedHP = filter(obj.hp);
+    // console.log(obj.attacks)
+    let calculatedHP = filter(obj.hp);
+    // console.log(calculatedHP)
 
+    // console.log(obj.attacks.length)
+    
+    // console(obj.attacks, typeof(obj.attacks))
     // let str = obj.attacks.length * '50';
     // console.log(str, typeof(str))
     // let calculatedSTR = filter(str);
@@ -67,11 +73,12 @@ const calculatePokemon = (obj) => {
     // let calculatedHAPPINESS = ((calculatedHP / 10) + (calculatedDAMAGE /10 ) + 10 - (calculatedWEAK)) / 5;
 
     return {
-        // "hp": toINT(calculatedHP),
-        // "str": toINT(calculatedSTR),
+        "hp": calculatedHP
+        // "str": calculatedSTR
         // "weak": toINT(calculatedWEAK),
         // "happiness": toINT(calculatedHAPPINESS),
-        // "happiness": Math.floor(toINT(calculatedHP) / 25) + 1
+        // Math.max(0, Math.min(100, calculatedHP))
+        // "happiness": Math.floor(Math.max(0, Math.min(100, calculatedHP)) / 25) + 1
     }
 }
 

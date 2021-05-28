@@ -6,6 +6,7 @@ import cute from '../cute.png';
 const PokedexCard = (props) => {
 
     //variables from props
+    const index = props.index;
     const id = props.id;
     const typeOfCard = props.typeOfCard;
     const imageUrl = props.imageUrl;

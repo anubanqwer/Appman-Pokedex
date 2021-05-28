@@ -41,18 +41,19 @@ const Modal = ({ open, onClose }) => {
                     <input type='text' placeholder='Find pokemon' onChange={handleInputFromSearchBar} className={Styles.searchBar}/>
                     <img src={search} alt='search' className={Styles.styleSearchImage} />
                     <div className={Styles.cardAreaInModal}>                        
-                        {queryList.map((o) => {
+                        {queryList.map((o, i) => {
 
                             let calculatedO = calculatePokemon(o)
-                            console.log(calculatedO)
-                            console.log(typeof(o))
-                            
+                            // console.log(calculatedO)
+                            // console.log(typeof(o))
+
                             return (
                                <PokedexCard typeOfCard='long'
                                 id = {o.id}
+                                index = {i}
                                 imageUrl= {o.imageUrl}
                                 pokemonName= {o.name}
-                                hpPercent= {100}
+                                hpPercent= {calculatedO.hp}
                                 strPercent= {40}
                                 weakPercent= {50}
                                 numberOfHappiness= {5}/> 

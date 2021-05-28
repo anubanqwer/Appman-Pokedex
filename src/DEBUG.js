@@ -1,16 +1,11 @@
-import {calculatePokemon} from './Function/calculatePokemon';
-import react from 'react';
+var regex = /\d/g
+console.log('145+'.match(regex).join(''),
+            typeof('145+'.match(regex).join('')),
+            '13-5'.match(regex),
+            ''.match(regex),
+            // 'None'.match(regex).join()
+            ''.match(regex) == null, 
+            ''.match(regex) === null
+)
 
-const debug = () => {
-    
-    const listy = [{'a': 'b'}, {'c': 'd'}]
-
-    return ({
-        <div>
-            adf
-        </div>
-    });
-
-}
-
-export default debug
+//NULL can't join 
