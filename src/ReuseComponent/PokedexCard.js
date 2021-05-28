@@ -6,6 +6,7 @@ import cute from '../cute.png';
 const PokedexCard = (props) => {
 
     //variables from props
+    const id = props.id;
     const typeOfCard = props.typeOfCard;
     const imageUrl = props.imageUrl;
     const pokemonName = props.pokemonName;
@@ -94,3 +95,13 @@ const PokedexCard = (props) => {
 }
 
 export default PokedexCard;
+
+//---------------------- DEMO CARD ------------------//
+
+{/* <PokedexCard typeOfCard='long'
+                        imageUrl='https://images.pokemontcg.io/ex14/85.png'
+                        pokemonName='Cutto'
+                        hpPercent={90}
+                        strPercent={20}
+                        weakPercent={50}
+                        numberOfHappiness={5}/> */}

@@ -66,9 +66,6 @@ const calculatePokemon = (obj) => {
 
     let calculatedHAPPINESS = ((calculatedHP / 10) + (calculatedDAMAGE /10 ) + 10 - (calculatedWEAK)) / 5;
 
-    let minHappiness = 1;
-    let maxHappiness = 5;
-
     return {
         "id": obj.id,
         "imageUrl": obj.imageUrl,
@@ -77,63 +74,65 @@ const calculatePokemon = (obj) => {
         "str": toINT(calculatedSTR),
         "weak": toINT(calculatedWEAK),
         // "happiness": toINT(calculatedHAPPINESS),
-        "happiness": Math.floor(Math.random() * (maxHappiness - minHappiness) + minHappiness)
+        "happiness": Math.floor(toINT(calculatedHP) / 25) + 1
     }
 }
 
-//-------------------------------------------------- TEST ----------------------------------------------------
-let obj1 = {
-    "id": "xy0-14",
-    "name": "Greninja",
-    "nationalPokedexNumber": 658,
-    "imageUrl": "https://images.pokemontcg.io/xy0/14.png",
-    "imageUrlHiRes": "https://images.pokemontcg.io/xy0/14_hires.png",
-    "supertype": "Pokémon",
-    "subtype": "Stage 2",
-    "evolvesFrom": "Frogadier",
-    "hp": "140",
-    "retreatCost": [
-        "Colorless"
-    ],
-    "convertedRetreatCost": 1,
-    "number": "14",
-    "artist": "5ban Graphics",
-    "rarity": "",
-    "series": "XY",
-    "set": "Kalos Starter Set",
-    "setCode": "xy0",
-    "attacks": [
-        {
-            "cost": [
-                "Water"
-            ],
-            "name": "Mat Block",
-            "text": "Flip a coin. If heads, discard an Energy attached to your opponent's Active Pokémon.",
-            "damage": "40",
-            "convertedEnergyCost": 1
-        },
-        {
-            "cost": [
-                "Water",
-                "Water",
-                "Colorless"
-            ],
-            "name": "Aqua Edge",
-            "text": "",
-            "damage": "80",
-            "convertedEnergyCost": 3
-        }
-    ],
-    "weaknesses": [
-        {
-            "type": "Grass",
-            "value": "×2"
-        }
-    ],
-    "type": "Water"
+export {extractNumber, filter, filterDAMAGE, toINT, calculatePokemon};
 
-}
+//-------------------------------------------------- TEST ----------------------------------------------------
+// let obj1 = {
+//     "id": "xy0-14",
+//     "name": "Greninja",
+//     "nationalPokedexNumber": 658,
+//     "imageUrl": "https://images.pokemontcg.io/xy0/14.png",
+//     "imageUrlHiRes": "https://images.pokemontcg.io/xy0/14_hires.png",
+//     "supertype": "Pokémon",
+//     "subtype": "Stage 2",
+//     "evolvesFrom": "Frogadier",
+//     "hp": "140",
+//     "retreatCost": [
+//         "Colorless"
+//     ],
+//     "convertedRetreatCost": 1,
+//     "number": "14",
+//     "artist": "5ban Graphics",
+//     "rarity": "",
+//     "series": "XY",
+//     "set": "Kalos Starter Set",
+//     "setCode": "xy0",
+//     "attacks": [
+//         {
+//             "cost": [
+//                 "Water"
+//             ],
+//             "name": "Mat Block",
+//             "text": "Flip a coin. If heads, discard an Energy attached to your opponent's Active Pokémon.",
+//             "damage": "40",
+//             "convertedEnergyCost": 1
+//         },
+//         {
+//             "cost": [
+//                 "Water",
+//                 "Water",
+//                 "Colorless"
+//             ],
+//             "name": "Aqua Edge",
+//             "text": "",
+//             "damage": "80",
+//             "convertedEnergyCost": 3
+//         }
+//     ],
+//     "weaknesses": [
+//         {
+//             "type": "Grass",
+//             "value": "×2"
+//         }
+//     ],
+//     "type": "Water"
+
+// }
 
 // console.log(extractNumber('nonE') === '')
-console.log(calculatePokemon(obj1))
+// console.log(calculatePokemon(obj1))
 //console.log(extractNumber('-1'))
