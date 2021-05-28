@@ -26,7 +26,7 @@ const isPokemonType = (inputString) => {
 
 }
 
-const getPokemonListAPI = (inputFromSeachbar) => {
+const getPokemonListAPI = (inputFromSeachbar, handleQueryList) => {
     //inputFromSearchBar is string
 
     const queryBaseString = 'http://localhost:3030/api/cards';
@@ -45,8 +45,9 @@ const getPokemonListAPI = (inputFromSeachbar) => {
 
     axios.get(queryBaseString + queryAddOn).
     then(res =>{
-        console.log(res.data.cards);
-        return res.data.cards;
+        // console.log(res.data.cards);
+        handleQueryList(res.data.cards)
+        // return res.data.cards;
     }).
     catch(err =>{
       console.log(err);

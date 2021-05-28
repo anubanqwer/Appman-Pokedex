@@ -56,38 +56,41 @@ const PokedexCard = (props) => {
                     // 'backgroundColor': 'red',
                     width: '100%',
                 }}>
-                    <tr>
-                        <td className={Styles.setFontWeightBeforeTube}>HP</td>
-                        <td>
-                            <PercentBar percentVal={hpPercent} typeOfCard={typeOfCard} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>STR</td>
-                        <td>
-                            <PercentBar percentVal={strPercent} typeOfCard={typeOfCard} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>WEAK</td>
-                        <td>
-                            <PercentBar percentVal={weakPercent} typeOfCard={typeOfCard} />
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td className={Styles.setFontWeightBeforeTube}>HP</td>
+                            <td>
+                                <PercentBar percentVal={hpPercent} typeOfCard={typeOfCard} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>STR</td>
+                            <td>
+                                <PercentBar percentVal={strPercent} typeOfCard={typeOfCard} />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WEAK</td>
+                            <td>
+                                <PercentBar percentVal={weakPercent} typeOfCard={typeOfCard} />
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>            
                 {happinessList}
 
                 <div style={{
                     /* background-color: chartreuse; */
                     color: '#dc7777',
-                    'font-size': '25px',
+                    fontSize: '25px',
                     /* width: 50px; */
                     position: 'absolute',
                     top: '0px',
                     right: '0px',
-                    'margin-top': '10px',
-                    'margin-right': '10px',
-                    display: isHoverCard ? "": "none"
+                    marginTop: '10px',
+                    marginRight: '10px',
+                    display: isHoverCard ? "": "none",
+                    cursor: 'pointer'
                 }}>{buttonName}</div>
             </div>
         </div>

@@ -52,29 +52,26 @@ const toINT = (res) => {
 }
 
 const calculatePokemon = (obj) => {
-    let calculatedHP = filter(obj.hp);
+    // let calculatedHP = filter(obj.hp);
 
-    let str = obj.attacks.length * '50';
-    console.log(str, typeof(str))
-    let calculatedSTR = filter(str);
+    // let str = obj.attacks.length * '50';
+    // console.log(str, typeof(str))
+    // let calculatedSTR = filter(str);
 
-    let weak = obj.weaknesses.length * '100';
-    let calculatedWEAK = filter(weak);
+    // let weak = obj.weaknesses.length * '100';
+    // let calculatedWEAK = filter(weak);
 
-    let calculatedDAMAGE = filterDAMAGE(obj.attacks);
-    console.log('calculatedDAMAGE', calculatedDAMAGE)
+    // let calculatedDAMAGE = filterDAMAGE(obj.attacks);
+    // console.log('calculatedDAMAGE', calculatedDAMAGE)
 
-    let calculatedHAPPINESS = ((calculatedHP / 10) + (calculatedDAMAGE /10 ) + 10 - (calculatedWEAK)) / 5;
+    // let calculatedHAPPINESS = ((calculatedHP / 10) + (calculatedDAMAGE /10 ) + 10 - (calculatedWEAK)) / 5;
 
     return {
-        "id": obj.id,
-        "imageUrl": obj.imageUrl,
-        "name": obj.name,
-        "hp": toINT(calculatedHP),
-        "str": toINT(calculatedSTR),
-        "weak": toINT(calculatedWEAK),
+        // "hp": toINT(calculatedHP),
+        // "str": toINT(calculatedSTR),
+        // "weak": toINT(calculatedWEAK),
         // "happiness": toINT(calculatedHAPPINESS),
-        "happiness": Math.floor(toINT(calculatedHP) / 25) + 1
+        // "happiness": Math.floor(toINT(calculatedHP) / 25) + 1
     }
 }
 
