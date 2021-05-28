@@ -15,10 +15,12 @@ const Modal = ({ open, onClose }) => {
     }
 
     useEffect(() => {
+        // console.log('useEffect in Modal')
+
         //---------------------------------------------- API -----------------------------------------------------------
         const resultFromAPI = inputFromSearchBar === '' ? getPokemonListAPI(''): getPokemonListAPI(inputFromSearchBar);
         setQueryList(resultFromAPI);
-        // console.log(resultFromAPI); -> need promise
+        // console.log(resultFromAPI); -> need promise ?
         //---------------------------------------------- API -----------------------------------------------------------
 
     }, [inputFromSearchBar]);

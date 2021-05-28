@@ -36,7 +36,7 @@ const App = () => {
                     hpPercent={90}
                     strPercent={20}
                     weakPercent={50}
-                    numberOfHappiness={5}/>
+                    numberOfHappiness={4}/>
                     <PokedexCard typeOfCard='short'
                     imageUrl='https://images.pokemontcg.io/ex14/85.png'
                     pokemonName='Cutto'
