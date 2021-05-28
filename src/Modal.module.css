@@ -7,8 +7,7 @@
 }
 
 .styleModal {
-    /* position: fixed; */
-    position: relative;
+    position: fixed;
     z-index: 1000;
     background-color: #ffffff;
     width: 964px;
@@ -50,6 +49,7 @@
     margin-top: 73px;
     height: 635px;
     overflow-y: auto;
+    /* overflow-x: auto; */
 
     display: flex;
     flex-direction: column;
