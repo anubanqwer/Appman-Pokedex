@@ -29,6 +29,13 @@ const PokedexCard = (props) => {
 
     const [isHoverCard, setIsHoverCard] = useState(false);
 
+    const actionFromButton = () => {
+        if(props.typeOfCard === 'long'){
+            //ADD new pokemonCard to myList
+            props.addToMyList( props.getCardInModalByIndex( props.index ) );
+        }
+    }
+
     return (
         <div style={{
             height: `${cardHeight}` + 'px',
@@ -92,7 +99,7 @@ const PokedexCard = (props) => {
                     marginRight: '10px',
                     display: isHoverCard ? "": "none",
                     cursor: 'pointer'
-                }}>{buttonName}</div>
+                }} onClick={actionFromButton} >{buttonName}</div>
             </div>
         </div>
     );

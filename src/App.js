@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import PokedexCard from './ReuseComponent/PokedexCard';
 import Modal from './Modal'
+import {extractNumber, filter, filterDAMAGE, toINT, calculatePokemon} from './Function/calculatePokemon';
 
 const COLORS = {
   Psychic: "#f8a5c2",
@@ -22,56 +23,36 @@ const COLORS = {
 
 const App = () => {
 
+  //OPEN MODAL 
   const [isOpen, setIsOpen] = useState(false);
+  const [myList,  setMyList] = useState([]);
+
+  const addToMyList = ( newCardInJSONFormat ) => {
+    myList.push(newCardInJSONFormat);
+  }
 
   return (
     <div className="App">
-      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} addToMyList={addToMyList}/>
 
       <Header />
       <div className="cardArea">
-      <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Cutto'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={4}/>
-                    <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Cutto'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={5}/>
-                    <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Cutto'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={5}/>
-                    <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Cutto'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={5}/>
-                    <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Cody'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={5}/>
-                    <PokedexCard typeOfCard='short'
-                    imageUrl='https://images.pokemontcg.io/ex14/85.png'
-                    pokemonName='Natty'
-                    hpPercent={90}
-                    strPercent={20}
-                    weakPercent={50}
-                    numberOfHappiness={5}/>
+        {myList.map((o, i) => {
+
+        let calculatedO = calculatePokemon(o)
+
+        return (
+          <PokedexCard typeOfCard='short'
+            id = {o.id}
+            index = {i}
+            imageUrl= {o.imageUrl}
+            pokemonName= {o.name}
+            hpPercent= {calculatedO.hp}
+            strPercent= {40}
+            weakPercent= {50}
+            numberOfHappiness= {5}/> 
+        );
+        })}                    
       </div>
 
       <Footer />

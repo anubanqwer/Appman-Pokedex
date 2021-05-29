@@ -6,7 +6,7 @@ import PokedexCard from './ReuseComponent/PokedexCard';
 import {isPokemonType, getPokemonListAPI} from './Function/getPokemonListAPI';
 import {extractNumber, filter, filterDAMAGE, toINT, calculatePokemon} from './Function/calculatePokemon';
 
-const Modal = ({ open, onClose }) => { 
+const Modal = ({ open, onClose, addToMyList }) => { 
 
     const [queryList, setQueryList] = useState([]);
     const [inputFromSearchBar, setInputFromSeachbar] = useState('');
@@ -17,6 +17,10 @@ const Modal = ({ open, onClose }) => {
 
     const handleQueryList = (data) => {
         setQueryList(data);
+    }
+
+    const getCardInModalByIndex = (index) => {
+        return queryList[index];
     }
 
     useEffect(() => {
@@ -56,7 +60,9 @@ const Modal = ({ open, onClose }) => {
                                 hpPercent= {calculatedO.hp}
                                 strPercent= {40}
                                 weakPercent= {50}
-                                numberOfHappiness= {5}/> 
+                                numberOfHappiness= {5}
+                                addToMyList={addToMyList}
+                                getCardInModalByIndex={getCardInModalByIndex}/> 
                             );
                         })}                     
                     </div>
