@@ -59,6 +59,7 @@ const Modal = ({ open, onClose, addToMyList, checkInMyList }) => {
                             }
 
                             let calculatedO = calculatePokemon(o)
+                            // console.log(o, o.attacks, typeof(o.attacks))
                             // console.log(calculatedO)
                             // console.log(typeof(o))
 

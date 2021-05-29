@@ -48,10 +48,10 @@ const PokedexCard = (props) => {
         <div style={{
             height: `${cardHeight}` + 'px',
             width: `${cardWidth}` + 'px',
-            'background-color': '#f3f4f7',
-            'box-shadow': '3px 3px #d5d6dc',
-            'display': 'flex',
-            'margin': '10px 0px'
+            backgroundColor: '#f3f4f7',
+            boxShadow: '3px 3px #d5d6dc',
+            display: 'flex',
+            margin: '10px 0px'
         }}
             onMouseEnter={()=> setIsHoverCard(true)}
             onMouseLeave={()=> setIsHoverCard(false)}
@@ -65,7 +65,7 @@ const PokedexCard = (props) => {
                 // 'backgroundColor': 'yellow',
                 // 'flex-grow': '1',
                 width: `${informationAreaWidth}` + 'px',
-                'position': 'relative'
+                position: 'relative'
             }}>
                 <h1 className={Styles.stylePokemonName}>{pokemonName}</h1>
                 <table style={{
