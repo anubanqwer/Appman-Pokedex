@@ -51,7 +51,7 @@ const PokedexCard = (props) => {
             backgroundColor: '#f3f4f7',
             boxShadow: '3px 3px #d5d6dc',
             display: 'flex',
-            margin: '10px 0px'
+            margin: '10px 13px'
         }}
             onMouseEnter={()=> setIsHoverCard(true)}
             onMouseLeave={()=> setIsHoverCard(false)}
