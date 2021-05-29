@@ -6,10 +6,12 @@ import PokedexCard from './ReuseComponent/PokedexCard';
 import {isPokemonType, getPokemonListAPI} from './Function/getPokemonListAPI';
 import {extractNumber, filter, filterDAMAGE, toINT, calculatePokemon} from './Function/calculatePokemon';
 
-const Modal = ({ open, onClose, addToMyList }) => { 
+const Modal = ({ open, onClose, addToMyList, checkInMyList }) => { 
 
     const [queryList, setQueryList] = useState([]);
     const [inputFromSearchBar, setInputFromSeachbar] = useState('');
+    //addAction is when you add newCard to myList, then we need to rerender modal BY TOGGLIGING STATE for not showing duplicate cards
+    const [addAction, setAddAction] = useState(false);
 
     const handleInputFromSearchBar = (e) => {
         setInputFromSeachbar(e.target.value);
@@ -23,6 +25,10 @@ const Modal = ({ open, onClose, addToMyList }) => {
         return queryList[index];
     }
 
+    const rerenderForAddAction = () => {
+        setAddAction(!addAction);
+    }
+
     useEffect(() => {
         // console.log('useEffect in Modal')
 
@@ -30,7 +36,7 @@ const Modal = ({ open, onClose, addToMyList }) => {
         getPokemonListAPI(inputFromSearchBar, handleQueryList);
         //---------------------------------------------- API -----------------------------------------------------------
 
-    }, [inputFromSearchBar]);
+    }, [inputFromSearchBar, addAction]);
 
     if(!open) return null;
 
@@ -47,6 +53,11 @@ const Modal = ({ open, onClose, addToMyList }) => {
                     <div className={Styles.cardAreaInModal}>                        
                         {queryList.map((o, i) => {
 
+                            //CHECK this pokemonCard is already in myList or not?
+                            if(checkInMyList(o.id)){
+                                return;
+                            }
+
                             let calculatedO = calculatePokemon(o)
                             // console.log(calculatedO)
                             // console.log(typeof(o))
@@ -62,7 +73,8 @@ const Modal = ({ open, onClose, addToMyList }) => {
                                 weakPercent= {50}
                                 numberOfHappiness= {5}
                                 addToMyList={addToMyList}
-                                getCardInModalByIndex={getCardInModalByIndex}/> 
+                                getCardInModalByIndex={getCardInModalByIndex}
+                                rerenderForAddAction={rerenderForAddAction}/> 
                             );
                         })}                     
                     </div>

@@ -33,6 +33,9 @@ const PokedexCard = (props) => {
         if(props.typeOfCard === 'long'){
             //ADD new pokemonCard to myList (MODAL PAGE)
             props.addToMyList( props.getCardInModalByIndex( props.index ) );
+
+            //addAction is when you add newCard to myList, then we need to rerender modal BY TOGGLIGING STATE for not showing duplicate cards
+            props.rerenderForAddAction()
         }
         else{
             //REMOVE pokemonCard from myList (MAIN PAGE)

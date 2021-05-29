@@ -40,9 +40,19 @@ const App = () => {
     setMyList(dummyList)
   }
 
+  const checkInMyList = (pokemonID) => {
+    //pokemonID is string
+    for(var i=0; i < myList.length; i++){
+      if(myList[i].id === pokemonID){
+        return true;
+      }
+    }
+    return false;
+  }
+
   return (
     <div className="App">
-      <Modal open={isOpen} onClose={() => setIsOpen(false)} addToMyList={addToMyList}/>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} addToMyList={addToMyList} checkInMyList={checkInMyList}/>
 
       <Header />
       <div className="cardArea">
