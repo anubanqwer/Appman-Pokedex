@@ -31,8 +31,13 @@ const PokedexCard = (props) => {
 
     const actionFromButton = () => {
         if(props.typeOfCard === 'long'){
-            //ADD new pokemonCard to myList
+            //ADD new pokemonCard to myList (MODAL PAGE)
             props.addToMyList( props.getCardInModalByIndex( props.index ) );
+        }
+        else{
+            //REMOVE pokemonCard from myList (MAIN PAGE)
+            console.log('delete')
+            props.removeFromMyList( props.index )
         }
     }
 

@@ -29,6 +29,15 @@ const App = () => {
 
   const addToMyList = ( newCardInJSONFormat ) => {
     myList.push(newCardInJSONFormat);
+    // var dummyList = [...myList]
+    // dummyList.push(newCardInJSONFormat)
+    // setMyList(dummyList)    
+  }
+
+  const removeFromMyList = (index) => {
+    var dummyList = [...myList]
+    dummyList.splice(index, 1)
+    setMyList(dummyList)
   }
 
   return (
@@ -50,7 +59,8 @@ const App = () => {
             hpPercent= {calculatedO.hp}
             strPercent= {40}
             weakPercent= {50}
-            numberOfHappiness= {5}/> 
+            numberOfHappiness= {5}
+            removeFromMyList={removeFromMyList}/> 
         );
         })}                    
       </div>

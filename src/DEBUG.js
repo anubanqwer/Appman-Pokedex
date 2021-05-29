@@ -9,3 +9,13 @@ console.log('145+'.match(regex).join(''),
 )
 
 //NULL can't join 
+
+var x = ['a', 'b', 'c', 'd']
+//y change pointer but still the same object
+var y = x
+x.splice(1, 2)
+y.splice(1, 1)
+console.log(
+    x,
+    y
+)
