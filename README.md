@@ -82,7 +82,7 @@ Wish you luck!! :)
 TEST GIT
 NOTE
 
-1. สิ่งที่ไม่ได้ทำคือ การคำนวณ HP, STR, DAMAGE, HAPPINESS เนื่องจากติดปัญหา undefined object ทำให้ไม่สามารถใช้ method ของ Array ไม่ได้ เช่น
+1. สิ่งที่ไม่ได้ทำคือ การคำนวณ HP, STR, DAMAGE, HAPPINESS เนื่องจากติดปัญหา undefined object ทำให้ไม่สามารถใช้ method ของ Array ได้ เช่น
  object.attacks.length -> failed
 2. Time complexity ในการแสดงการ์ดไม่ซ้ำ คือ O(NM) 
 เมื่อ N = จำนวนการ์ดทั้งหมดใน list ของเรา และ M = จำนวนการ์ดที่ได้จากการ query ครั้งนั้น
